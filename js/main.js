@@ -57,3 +57,13 @@ window.addEventListener('beforeinstallprompt', (event) => {
 window.addEventListener('appinstalled', (event) => {
   console.log('App Installed');
 });
+
+// did we launch as a PWA?
+var urlParams = new URLSearchParams(window.location.search);
+// look for the source parameter, if it's `pwa` then it's installed
+if (urlParams.get('source') === 'pwa') {
+  console.log('Launched as PWA');
+  // add the PWA moniker to the title
+  let theTitle = document.getElementById('title');
+  theTitle.innerHTML = theTitle.innerHTML + ' (PWA)';
+}
