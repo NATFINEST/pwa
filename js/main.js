@@ -53,3 +53,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
   deferredPrompt = event;
   installButton.style.display = 'block';
 });
+
+window.addEventListener('appinstalled', (event) => {
+  console.log('App Installed');
+});
